@@ -1,0 +1,86 @@
+######################## Settings
+set shell /bin/zsh 
+set hidden true
+set ignorecase true
+
+######################## Commands
+# Mkdir
+cmd mkdir ${{
+  printf "Directory name: \n"
+  read ans
+  mkdir $ans
+}}
+
+# Touch
+cmd touch ${{
+  printf "File name: \n"
+  read ans
+  #$EDITOR $ans
+  touch $ans
+}}
+
+# Shell but with output shown
+cmd shellcmd ${{
+  printf "Shell command: \n"
+  read ans
+  $ans
+
+  printf "\n"
+  printf "press <enter> key to continue\n"
+  read ans
+}}
+
+# Move to ~/.trash with prompt
+cmd trash ${{ 
+  printf "sure you want to move this item to trash? \n"
+  printf "<enter> to move to trash, <ctrl-c> to abort \n"
+
+  read ans
+
+  %set -f; mv $fx ~/.trash
+}}
+
+cmd help ${{
+  printf "[.] toggle hidden\n"
+  printf "[d] trash\n"
+  printf "[D] delete\n"
+  printf "[p] paste\n"
+  printf "[x] cut\n"
+  printf "[y] copy\n"
+  printf "[o] open $f\n"
+  printf "[e] Edit with Nvim\n"
+  printf "[<enter>] set hidden\n"
+  printf "[E] Edit with Helix\n"
+  printf "[C] Edit with Code\n"
+  printf "[R] reload\n"
+  printf "[a] touch\n"
+  printf "[A] mkdir\n"
+  printf "[s] shellcmd (with output shown)\n"
+  printf "[S] shell (output hidden)\n"
+  printf "[?] help\n"
+  printf "[hjkl] move\n"
+  printf "\n"
+  printf "press <enter> key to continue\n"
+  read ans
+}}
+
+
+########################## Bindings
+# Basic Functions
+map . set hidden!
+map d trash
+map D delete
+map p paste
+map x cut
+map y copy
+map o $open $f
+map e $~/.local/bin/lvim $f
+map <enter> $~/.local/bin/lvim $f
+map E $hx $f
+map C $code $f
+map R reload
+map a touch
+map A mkdir
+map s shellcmd
+map S shell
+map ? help
