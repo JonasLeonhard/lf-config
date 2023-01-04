@@ -57,6 +57,7 @@ cmd help ${{
   printf "[A] mkdir\n"
   printf "[s] shellcmd (with output shown)\n"
   printf "[S] shell (output hidden)\n"
+  printf "[c-g] lazygit"
   printf "[?] help\n"
   printf "[hjkl] move\n"
   printf "\n"
@@ -76,6 +77,7 @@ map y copy
 map o $open $f
 map e $~/.local/bin/lvim $f
 map <enter> $~/.local/bin/lvim $f
+map <c-g> $lazygit
 map E $hx $f
 map C $code $f
 map R reload
