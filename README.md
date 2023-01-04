@@ -55,7 +55,7 @@ lfcd () {
 bindkey -s '^f' 'lfcd\n'
 ```
 
-to your .zshrc to open lf via <c-f>.
+to your .zshrc to open lf via ctrl-f.
 
 to see the keybindings. Press "?" when lf is opened.
 
