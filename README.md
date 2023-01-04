@@ -65,8 +65,6 @@ to see the keybindings. Press "?" when lf is opened.
 
 ## Credits:
 
-Based on Pastel Powerline Preset: https://starship.rs/presets/pastel-powerline.html
-
 ```
-
+For the ctrl-f opening .zshrc (https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52)
 ```
