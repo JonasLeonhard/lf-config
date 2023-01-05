@@ -25,7 +25,7 @@ Custom https://github.com/gokcehan/lf configuration
 
 ## Screenshots
 
-<![Lf Prompt](./assets/lf.png)>
+<![Lf Ui](./assets/lf.png)>
 
 ## Technologies
 
