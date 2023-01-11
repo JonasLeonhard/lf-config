@@ -42,25 +42,51 @@ cmd trash ${{
 }}
 
 cmd help ${{
-  printf "[.] toggle hidden\n"
+  printf "\n\n---------------- Selection --------------\n\n"
+  printf "[<space>] select\n"
+  printf "[v] invert selection\n"
+  printf "[u] unmark all selections\n"
+  printf "[c] clear copied or cut files\n"
+  printf "\n\n---------------- Modify --------------\n\n"
+  printf "[a] touch\n"
+  printf "[A] mkdir\n"
   printf "[d] trash\n"
   printf "[D] delete\n"
   printf "[p] paste\n"
   printf "[x] cut\n"
   printf "[y] copy\n"
-  printf "[s] open $f\n"
+  printf "\n\n----------------- Open --------------\n\n"
+  printf "[S] open $f\n"
   printf "[e] Edit with Nvim\n"
-  printf "[<enter>] set hidden\n"
   printf "[E] Edit with Helix\n"
   printf "[C] Edit with Code\n"
-  printf "[R] reload\n"
-  printf "[a] touch\n"
-  printf "[A] mkdir\n"
+  printf "\n\n----------------- Filter, Search, Sort --------------\n\n"
+  printf "[/] search for input (move forward [n], backward [N])\n"
+  printf "[:setfilter $] filter by $\n"
+  printf "[s] sortBy $f\n"
+  printf "\n\n----------------- Shell --------------\n\n"
   printf "[$] shellcmd (with output shown)\n"
+  printf "[%] shellcmd while piping the input from the ui and output to the ui\n"
   printf "[|] shell (output hidden)\n"
+  printf "[!] shellwait (with output shown, waits for button to be pressed to go back to the ui)\n"
+  printf "[&] shellasync (runs command in the background)\n"
+  printf "\n\n----------------- Movement --------------\n\n"
+  printf "[hjkl] move\n"
+  printf "[<c-u>] half page up\n"
+  printf "[<c-d>] half page down\n"
+  printf "[<c-b>] page up\n"
+  printf "[<c-f>] page down\n"
+  printf "[gg] go top\n"
+  printf "[gh] go home (cd ~)\n"
+  printf "[G] go bottom\n"
+  printf "\n\n----------------- Commands --------------\n\n"
+  printf "[:] command pallete\n"
+  printf "[z] toggle (.hidden files, time, size, reverseOrder)\n\n"
+  printf "[.] toggle .hidden files\n"
+  printf "[R] reload\n"
+  printf "[q] Quit"
   printf "[c-g] lazygit"
   printf "[?] help\n"
-  printf "[hjkl] move\n"
   printf "\n"
   printf "press <enter> key to continue\n"
   read ans
@@ -75,7 +101,7 @@ map D delete
 map p paste
 map x cut
 map y copy
-map s $open $f
+map S $open $f
 map e $~/.local/bin/lvim $f
 map <enter> $~/.local/bin/lvim $f
 map <c-g> $lazygit
