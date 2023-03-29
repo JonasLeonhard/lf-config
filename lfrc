@@ -1,5 +1,5 @@
 ######################## Settings
-set shell /bin/zsh 
+set shell /bin/zsh
 set hidden true
 set ignorecase true
 set icons true
@@ -32,7 +32,7 @@ cmd shellcmd ${{
 }}
 
 # Move to ~/.trash with prompt
-cmd trash ${{ 
+cmd trash ${{
   printf "sure you want to move this item to trash? \n"
   printf "<enter> to move to trash, <ctrl-c> to abort \n"
 
@@ -102,8 +102,9 @@ map p paste
 map x cut
 map y copy
 map S $open $f
-map e $~/.local/bin/lvim $f
-map <enter> $~/.local/bin/lvim $f
+# Switch keymap for lf opened inside nvim and outside
+map <enter> $bash ~/.config/nvim/lfrunner.bash
+map e $bash ~/.config/nvim/lfrunner.bash
 map <c-g> $lazygit
 map E $hx $f
 map C $code $f
